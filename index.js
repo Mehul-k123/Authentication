@@ -30,7 +30,6 @@ app.post("/signup", async (req, res) => {
     const { name, email, password, tel,msgContent } = req.body;
   
     if (!name || !email || !password || !tel) {
-      // If any field is empty, you can display an error message or redirect to a page with an error message.
       return  res.render('signup', { message: "Please fill in all the required fields." });
     }
  
@@ -53,8 +52,8 @@ app.post("/signup", async (req, res) => {
   
     await collection.insertMany([data]);
   
-    // res.render("login")
-    res.redirect("https://nayepankh.com/");
+    res.render("login")
+    // res.redirect("https://nayepankh.com/");
   });
 
 

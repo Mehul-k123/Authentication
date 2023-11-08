@@ -1,5 +1,8 @@
-const express = require("express")
-const app=express()
+const express = require('express');
+const http = require('http');
+
+const app = express();
+const server = http.createServer(app);
 const path = require("path")
 const hbs = require("hbs")
 const collection = require("./mongodb")
@@ -79,7 +82,7 @@ app.post("/login",async (req,res)=>{
 }) 
 
 
-app.listen(PORT,()=>{
+server.listen(PORT,()=>{
     console.log("port connected");
 })
  

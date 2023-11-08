@@ -8,7 +8,7 @@ const hbs = require("hbs")
 const collection = require("./mongodb")
 const templatePath = path.join(__dirname,'./templates')
 require('dotenv').config()
-const PORT = process.env.PORT || 3000 ;
+
 
  
 
@@ -82,7 +82,7 @@ app.post("/login",async (req,res)=>{
 }) 
 
 
-server.listen(PORT,()=>{
+server.listen(process.env.PORT || 3000, ()=>{
     console.log("port connected");
 })
  

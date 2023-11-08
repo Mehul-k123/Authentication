@@ -25,6 +25,9 @@ app.get("/signup",(req,res)=>{
     res.render("signup") 
 })
 
+app.get("/",(req,res)=>{
+  res.send("Working")
+})
 
 app.post("/signup", async (req, res) => {
     const { name, email, password, tel,msgContent } = req.body;

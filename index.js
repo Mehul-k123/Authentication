@@ -58,8 +58,7 @@ app.post("/signup", async (req, res) => {
   
     await collection.insertMany([data]);
   
-    res.render("login")
-    // res.redirect("https://nayepankh.com/");
+    res.render("login") 
   });
 
 
@@ -70,7 +69,7 @@ app.post("/login",async (req,res)=>{
     const check = await collection.findOne({email:req.body.email})
    
    if(check.password===req.body.password){
-    res.redirect("https://nayepankh.com/") 
+    res.redirect("https://nayepankh.onrender.com/") 
    }
     else{
         res.render('login', { message: 'Password Incorrect Try Again' });
